@@ -1,0 +1,79 @@
+.filter-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        background-image: linear-gradient(301deg, rgba(26, 247, 253, 1) 23%, rgba(249, 104, 36, 1) 83%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        background-image: linear-gradient(52deg, rgba(235, 253, 26, 1) 34%, rgba(249, 104, 36, 1) 68%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    &__form {
+
+        &-label {
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            &_type_start {
+                background-image: linear-gradient(52deg, rgba(253, 190, 26, 1) 6%, rgba(36, 172, 249, 1) 64%);
+            }
+
+            &_type_middle {
+                background-image: linear-gradient(52deg, rgba(221, 26, 253, 1) 6%, rgba(155, 36, 249, 1) 64%);
+            }
+        }
+
+        &-reset {
+            padding-top: 10px;
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        &-item {
+            width: 270px;
+        }
+
+        &-content {
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-height: 80px;
+            max-width: 800px;
+        }
+
+        &-line {
+            margin: 10px auto;
+            height: 3px;
+            width: 800px;
+
+            &_type_start {
+                background: linear-gradient(52deg, rgba(253, 190, 26, 1) 0%, rgba(36, 193, 249, 1) 100%);
+            }
+
+            &_type_middle {
+                background: linear-gradient(52deg, rgba(235, 253, 26, 1) 0%, rgba(249, 104, 36, 1) 100%);
+            }
+
+            &_type_end {
+                background: linear-gradient(52deg, rgba(190, 26, 253, 1) 0%, rgba(147, 36, 249, 1) 100%);
+            }
+        }
+    }
+}

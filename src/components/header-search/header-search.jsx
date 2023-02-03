@@ -7,7 +7,7 @@ export const HeaderSearch = () => {
             <h1 className={`header__title ui text`}>Поиск по содержимому</h1>
             <div className={`header__search ui fluid category search`}>
                 <div className={`header__inner ui icon input`}>
-                    <input className={`header__input prompt`} type="text" placeholder="Поиск" />
+                    <input className={`header__input prompt`} name="search" type="text" placeholder="Поиск" />
                     <i className="search icon"></i>
                 </div>
                 <div className="results"></div>
