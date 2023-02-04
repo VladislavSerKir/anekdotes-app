@@ -1,13 +1,23 @@
-
+import { useDispatch } from "react-redux";
+import { setFilter, setResetCategory, setResetFilter } from "../../services/dataReducer/dataReducer";
 
 export const FilterSection = () => {
 
+    const dispatch = useDispatch()
+
     const handleChange = (event) => {
-        console.log(event.target.name);
+        if (event.target.checked) {
+            dispatch(setFilter(event.target.name))
+        } else {
+            dispatch(setResetCategory(event.target.name))
+        }
     }
 
     const handleSubmit = (event) => {
+        const checkboxes = Array.from(event.target.elements).filter(element => element.type === 'checkbox')
+        checkboxes.forEach(input => input.checked = false)
         event.preventDefault()
+        dispatch(setResetFilter())
     }
 
     return (
@@ -88,7 +98,10 @@ export const FilterSection = () => {
                 </div>
                 <div className={`filter-section__form-line filter-section__form-line_type_end`} />
                 <div className={`filter-section__form-reset`}>
-                    <button className={`filter-section__form-reset ui purple basic button`} type='submit'>Сбросить категории</button>
+                    <button
+                        className={`filter-section__form-reset ui purple basic button`}
+                        type='submit'
+                    >Сбросить категории</button>
                 </div>
             </form>
         </div>

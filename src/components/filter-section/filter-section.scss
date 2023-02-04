@@ -1,7 +1,14 @@
+@use '../../styles/mixins/adaptivity.scss';
+@import '../../styles/mixins/adaptivity.scss';
+
 .filter-section {
     max-width: 1000px;
     margin: 0 auto;
     margin-top: 10px;
+
+    @include adaptivity(900px) {
+        padding: 0 50px;
+    }
 
     &__title {
         display: flex;
@@ -41,10 +48,18 @@
             padding-top: 10px;
             margin: 0 auto;
             width: 300px;
+
+            @include adaptivity(400px) {
+                width: 100%;
+            }
         }
 
         &-item {
             width: 270px;
+
+            @include adaptivity(600px) {
+                width: 200px;
+            }
         }
 
         &-content {
@@ -56,12 +71,25 @@
             justify-content: space-between;
             max-height: 80px;
             max-width: 800px;
+
+            @include adaptivity(900px) {
+                max-height: 120px;
+            }
+
+            @include adaptivity(600px) {
+                max-height: 130px;
+            }
+
+            @include adaptivity(460px) {
+                max-height: 250px;
+                align-items: center;
+            }
         }
 
         &-line {
             margin: 10px auto;
             height: 3px;
-            width: 800px;
+            max-width: 800px;
 
             &_type_start {
                 background: linear-gradient(52deg, rgba(253, 190, 26, 1) 0%, rgba(36, 193, 249, 1) 100%);

@@ -1,3 +1,6 @@
+@use '../../styles/mixins/adaptivity.scss';
+@import '../../styles/mixins/adaptivity.scss';
+
 .header {
     max-width: 1000px;
     margin: 0 auto;
@@ -17,6 +20,10 @@
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
+
+        @include adaptivity(400px) {
+            max-width: 250px;
+        }
     }
 
     &__search {
@@ -28,10 +35,19 @@
 
     &__inner {
         width: 70%;
+
+        @include adaptivity(600px) {
+            width: 85%;
+        }
     }
 
     &__button {
         width: 300px;
         margin: 0 auto;
+
+        @include adaptivity(400px) {
+            width: 100%;
+            padding: 0 50px;
+        }
     }
 }
