@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/anekdotes-app/static/css/main.6b6ccca4.css",
+    "main.js": "/anekdotes-app/static/js/main.55a91985.js",
+    "static/media/picture.png": "/anekdotes-app/static/media/picture.e3953dc2d0da10ce653f.png",
+    "static/media/students.jpeg": "/anekdotes-app/static/media/students.d5132050e694ff4308b4.jpeg",
+    "index.html": "/anekdotes-app/index.html",
+    "main.6b6ccca4.css.map": "/anekdotes-app/static/css/main.6b6ccca4.css.map",
+    "main.55a91985.js.map": "/anekdotes-app/static/js/main.55a91985.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b6ccca4.css",
+    "static/js/main.55a91985.js"
+  ]
+}
