@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import students from "../../images/students.jpeg";
 import { fetchAnekdotes, fetchSectionAnekdote, filterAnekdotes } from "../../services/actions";
 import { setResetAnekdotes } from "../../services/dataReducer/dataReducer";
+import { Pagination } from "../pagination/pagination";
 import { Spinner } from "../spinner/spinner";
 
 export const ResultSection = () => {
@@ -12,6 +13,7 @@ export const ResultSection = () => {
     const filter = useSelector(store => store.data.filter);
     const isLoading = useSelector(store => store.data.isLoading)
     const dispatch = useDispatch()
+    const currentAnekdotes = useSelector(store => store.data.currentAnekdotes)
 
     useEffect(() => {
         dispatch(setResetAnekdotes())
@@ -42,7 +44,7 @@ export const ResultSection = () => {
             }
 
             {
-                anekdotes.map((anekdote, index) => {
+                currentAnekdotes.map((anekdote, index) => {
                     return (
                         <div className={`result-section__item ui items`} key={index}>
                             <div className="item">
@@ -62,6 +64,11 @@ export const ResultSection = () => {
                         </div>
                     )
                 })
+            }
+            {
+                anekdotes.length > 5 ? (
+                    <Pagination />
+                ) : null
             }
         </div>
     )

@@ -1,0 +1,19 @@
+.pagination {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__pages {
+        padding-top: 10px;
+        background-image: linear-gradient(90deg, rgb(131, 58, 180) 0%, rgb(253, 29, 29) 74%, rgb(252, 176, 69) 100%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    &__to {
+        padding-top: 10px;
+    }
+}

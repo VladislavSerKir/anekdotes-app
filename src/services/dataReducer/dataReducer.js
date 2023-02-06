@@ -5,6 +5,7 @@ const dataState = {
     search: '',
     filter: [],
     anekdotes: [],
+    currentAnekdotes: [],
     isLoading: false
 };
 
@@ -42,14 +43,18 @@ export const dataSlice = createSlice({
         },
         setResetAnekdotes: (state, action) => {
             state.anekdotes = []
+            state.currentAnekdotes = []
         },
         filterAnekdotesToSearch: (state, action) => {
             state.anekdotes = [...state.anekdotes].filter(anekdote => {
                 return anekdote.content.includes(action.payload)
             })
+        },
+        setCurrentAnekdotes: (state, action) => {
+            state.currentAnekdotes = action.payload
         }
     },
 })
 
-export const { setIsLoading, setTerm, setSearch, setResetSearch, setFilter, setResetFilter, setResetCategory, setAnekdotes, setResetAnekdotes, filterAnekdotesToSearch, setAnekdote } = dataSlice.actions
+export const { setIsLoading, setTerm, setSearch, setResetSearch, setFilter, setResetFilter, setResetCategory, setAnekdotes, setResetAnekdotes, filterAnekdotesToSearch, setAnekdote, setCurrentAnekdotes } = dataSlice.actions
 export const dataReducer = dataSlice.reducer
