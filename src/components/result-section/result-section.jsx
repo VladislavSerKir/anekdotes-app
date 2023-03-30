@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import students from "../../images/students.jpeg";
-import { fetchAnekdotes, fetchSectionAnekdote, filterAnekdotes } from "../../services/actions";
-import { setResetAnekdotes } from "../../services/dataReducer/dataReducer";
+import { usePagination } from "../../hooks/usePagination";
+import { fetchSectionAnekdote, filterAndSearch } from "../../services/actions";
+import { setCurrentAnekdotes, setResetAnekdotes } from "../../services/dataReducer/dataReducer";
 import { Pagination } from "../pagination/pagination";
 import { Spinner } from "../spinner/spinner";
 
@@ -15,18 +15,24 @@ export const ResultSection = () => {
     const dispatch = useDispatch()
     const currentAnekdotes = useSelector(store => store.data.currentAnekdotes)
 
+    const { maxPage, currentPage, findCurrentAnekdotes } = usePagination(anekdotes, 5);
+
+    useEffect(() => {
+        dispatch(setCurrentAnekdotes(findCurrentAnekdotes()))
+    }, [maxPage, currentPage, search, filter])
+
     useEffect(() => {
         dispatch(setResetAnekdotes())
         if (filter.length && !search) {
             filter.map(category => {
                 dispatch(fetchSectionAnekdote(category))
             })
-        }
-        else if (filter.length && search) {
-            dispatch(filterAnekdotes(filter, search))
+        } else if (filter.length && search) {
+            dispatch(filterAndSearch(filter, search))
         } else if (!filter.length && search) {
-            dispatch(fetchAnekdotes(search))
+            dispatch(search(search))
         }
+
     }, [search, filter])
 
     return (
@@ -49,7 +55,11 @@ export const ResultSection = () => {
                         <div className={`result-section__item ui items`} key={index}>
                             <div className="item">
                                 <a href="/" className="ui small image">
-                                    <img className={`result-section__item-image`} src={students} alt={anekdote.section}></img >
+                                    <img
+                                        className={`result-section__item-image`}
+                                        src={require(`../../images/${anekdote.section}.jpeg`)}
+                                        alt={anekdote.section}>
+                                    </img >
                                 </a>
                                 <div className="content">
                                     <a href="/" className={`header`}>
@@ -65,6 +75,7 @@ export const ResultSection = () => {
                     )
                 })
             }
+
             {
                 anekdotes.length > 5 ? (
                     <Pagination />

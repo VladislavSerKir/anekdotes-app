@@ -1,18 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { usePagination } from "../../hooks/usePagination";
 import { setCurrentAnekdotes } from "../../services/dataReducer/dataReducer";
 
 export const Pagination = () => {
 
+    const [page, setPage] = useState(1)
     const dispatch = useDispatch();
     const anekdotes = useSelector(store => store.data.anekdotes);
 
-    const { next, prev, jump, maxPage, currentPage, currentAnekdotes } = usePagination(anekdotes, 5);
+    const { next, prev, jump, maxPage, currentPage, findCurrentAnekdotes } = usePagination(anekdotes, 5);
 
     useEffect(() => {
-        dispatch(setCurrentAnekdotes(currentAnekdotes()))
-    }, [currentPage])
+        dispatch(setCurrentAnekdotes(findCurrentAnekdotes()))
+    }, [currentPage, maxPage])
 
     return (
         <div className={`pagination`}>
@@ -20,9 +21,24 @@ export const Pagination = () => {
                 <button className="ui labeled icon button primary basic" onClick={prev}><i className="left chevron icon"></i> Назад </button>
                 <button className="ui right labeled icon button negative basic" onClick={next}>Вперед <i className="right chevron icon"></i> </button>
             </div>
+
             <div className={`pagination__to ui left icon input transparent`}>
-                <input type="number" placeholder="Перейти на страницу..." />
-                <i className="arrow circle right icon"></i>
+                <div className="ui action input">
+                    <input
+                        min={1}
+                        max={maxPage}
+                        type="number"
+                        value={page}
+                        placeholder="Перейти на страницу..."
+                        onChange={(e) => dispatch(setPage(e.target.value))}
+                    />
+                    <button
+                        className="ui icon button purple"
+                        onClick={() => jump(page)}
+                    >
+                        <i className="arrow circle right icon"></i>
+                    </button>
+                </div>
             </div>
             <p className={`pagination__pages`}>Страница: {currentPage} из {maxPage}</p>
         </div>

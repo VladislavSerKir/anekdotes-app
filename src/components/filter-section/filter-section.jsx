@@ -6,7 +6,6 @@ export const FilterSection = () => {
     const dispatch = useDispatch()
 
     const handleChange = (event) => {
-        console.log(event.target.name);
         if (event.target.checked) {
             dispatch(setFilter(event.target.name))
         } else {

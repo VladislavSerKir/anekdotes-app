@@ -37,6 +37,7 @@ export const dataSlice = createSlice({
         },
         setAnekdotes: (state, action) => {
             state.anekdotes = [...state.anekdotes, ...action.payload]
+            state.currentAnekdotes = [...state.currentAnekdotes, ...action.payload]
         },
         setAnekdote: (state, action) => {
             state.anekdotes = [...state.anekdotes, action.payload]
@@ -49,9 +50,10 @@ export const dataSlice = createSlice({
             state.anekdotes = [...state.anekdotes].filter(anekdote => {
                 return anekdote.content.includes(action.payload)
             })
+            state.currentAnekdotes = [...state.anekdotes]
         },
         setCurrentAnekdotes: (state, action) => {
-            state.currentAnekdotes = action.payload
+            state.currentAnekdotes = [...action.payload]
         }
     },
 })
