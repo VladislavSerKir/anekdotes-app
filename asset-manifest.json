@@ -1,15 +1,30 @@
 {
   "files": {
     "main.css": "/anekdotes-app/static/css/main.6b6ccca4.css",
-    "main.js": "/anekdotes-app/static/js/main.55a91985.js",
+    "main.js": "/anekdotes-app/static/js/main.72c58d80.js",
     "static/media/picture.png": "/anekdotes-app/static/media/picture.e3953dc2d0da10ce653f.png",
+    "static/media/work.jpeg": "/anekdotes-app/static/media/work.e3098a04b25aca04fc17.jpeg",
     "static/media/students.jpeg": "/anekdotes-app/static/media/students.d5132050e694ff4308b4.jpeg",
+    "static/media/man.jpeg": "/anekdotes-app/static/media/man.6cc4eefba0cebd3c3cbd.jpeg",
+    "static/media/observations.jpeg": "/anekdotes-app/static/media/observations.3c3b8cee8996b9452f49.jpeg",
+    "static/media/kids.jpeg": "/anekdotes-app/static/media/kids.99b39645eef0869a1c9e.jpeg",
+    "static/media/wedding.jpeg": "/anekdotes-app/static/media/wedding.d4c214b6d956e22a6586.jpeg",
+    "static/media/jews.jpeg": "/anekdotes-app/static/media/jews.207f47c1e182726ec03f.jpeg",
+    "static/media/woman.jpeg": "/anekdotes-app/static/media/woman.c5ed2afc900caac09370.jpeg",
+    "static/media/doctor.jpeg": "/anekdotes-app/static/media/doctor.683441c22f6f0dbea387.jpeg",
+    "static/media/english.jpeg": "/anekdotes-app/static/media/english.e44dd0d8d269db9e7dcb.jpeg",
+    "static/media/scots.jpeg": "/anekdotes-app/static/media/scots.05327ae8e49bcf91b94d.jpeg",
+    "static/media/georgians.jpeg": "/anekdotes-app/static/media/georgians.f4b6557049d0f0a0bfb6.jpeg",
+    "static/media/french.jpeg": "/anekdotes-app/static/media/french.64385ed89a17ee597988.jpeg",
+    "static/media/italian.jpeg": "/anekdotes-app/static/media/italian.df9a5069513feeba4c0a.jpeg",
+    "static/media/russians.jpeg": "/anekdotes-app/static/media/russians.f3b6fa24fb9bd8c88ff5.jpeg",
+    "static/media/poles.jpeg": "/anekdotes-app/static/media/poles.fbc6e6eb17044b32a2e0.jpeg",
     "index.html": "/anekdotes-app/index.html",
     "main.6b6ccca4.css.map": "/anekdotes-app/static/css/main.6b6ccca4.css.map",
-    "main.55a91985.js.map": "/anekdotes-app/static/js/main.55a91985.js.map"
+    "main.72c58d80.js.map": "/anekdotes-app/static/js/main.72c58d80.js.map"
   },
   "entrypoints": [
     "static/css/main.6b6ccca4.css",
-    "static/js/main.55a91985.js"
+    "static/js/main.72c58d80.js"
   ]
 }
