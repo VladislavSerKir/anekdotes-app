@@ -5,7 +5,7 @@ export const FilterSection = () => {
 
     const dispatch = useDispatch()
 
-    const handleChange = (event) => {
+    const handleChange = (event: React.ChangeEvent<HTMLFormElement>) => {
         if (event.target.checked) {
             dispatch(setFilter(event.target.name))
         } else {
@@ -13,9 +13,11 @@ export const FilterSection = () => {
         }
     }
 
-    const handleSubmit = (event) => {
-        const checkboxes = Array.from(event.target.elements).filter(element => element.type === 'checkbox')
-        checkboxes.forEach(input => input.checked = false)
+    const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>): void => {
+
+        const checkboxes: Array<HTMLFormElement> = (Array.from(event.target.elements) as Array<HTMLFormElement>).filter((element: HTMLFormElement) => element.type === 'checkbox')
+
+        checkboxes.forEach((value: HTMLFormElement): boolean => value.checked = false)
         event.preventDefault()
         dispatch(setResetFilter())
     }

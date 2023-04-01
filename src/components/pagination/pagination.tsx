@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { ChangeEvent, useEffect, useState } from "react";
 import { usePagination } from "../../hooks/usePagination";
 import { setCurrentAnekdotes } from "../../services/dataReducer/dataReducer";
+import { useTypedDispatch, useTypedSelector } from "../../types/types";
 
 export const Pagination = () => {
 
-    const [page, setPage] = useState(1)
-    const dispatch = useDispatch();
-    const anekdotes = useSelector(store => store.data.anekdotes);
+    const [page, setPage] = useState<number>(1)
+    const dispatch = useTypedDispatch();
+    const anekdotes = useTypedSelector(store => store.data.anekdotes);
 
     const { next, prev, jump, maxPage, currentPage, findCurrentAnekdotes } = usePagination(anekdotes, 5);
 
@@ -15,8 +15,8 @@ export const Pagination = () => {
         dispatch(setCurrentAnekdotes(findCurrentAnekdotes()))
     }, [currentPage, maxPage])
 
-    const onChangePageHandler = (e) => {
-        setPage(e.target.value)
+    const onChangePageHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setPage(parseInt(e.target.value))
     }
 
     return (

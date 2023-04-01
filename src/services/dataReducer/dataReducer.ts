@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { TDataState } from '../../types/dataType';
 
-const dataState = {
+const dataState: TDataState = {
     theme: 'light',
     term: '',
     search: '',
@@ -26,7 +27,7 @@ export const dataSlice = createSlice({
         setSearch: (state, action) => {
             state.search = action.payload
         },
-        setResetSearch: (state, action) => {
+        setResetSearch: (state) => {
             state.search = ''
             state.term = ''
         },
@@ -46,7 +47,7 @@ export const dataSlice = createSlice({
         setAnekdote: (state, action) => {
             state.anekdotes = [...state.anekdotes, action.payload]
         },
-        setResetAnekdotes: (state, action) => {
+        setResetAnekdotes: (state) => {
             state.anekdotes = []
             state.currentAnekdotes = []
         },

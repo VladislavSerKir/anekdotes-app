@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { ChangeEvent, useEffect } from 'react';
 import picture from '../../images/picture.png'
 import pictureDark from '../../images/picture-dark.png';
 import { setIsLoading, setResetSearch, setSearch, setTerm, setTheme } from '../../services/dataReducer/dataReducer'
+import { useTypedDispatch, useTypedSelector } from '../../types/types';
 
 export const HeaderSearch = () => {
 
-    const term = useSelector(store => store.data.term);
-    const dispatch = useDispatch();
-    const theme = useSelector((store) => store.data.theme)
+    const term = useTypedSelector(store => store.data.term);
+    const dispatch = useTypedDispatch();
+    const theme = useTypedSelector((store) => store.data.theme)
 
     useEffect(() => {
         dispatch(setIsLoading(true))
@@ -23,7 +23,7 @@ export const HeaderSearch = () => {
         }
     }, [term])
 
-    const themeHandler = (e) => {
+    const themeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.checked) {
             dispatch(setTheme('dark'))
         } else {

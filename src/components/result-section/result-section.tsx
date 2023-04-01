@@ -1,20 +1,20 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { usePagination } from "../../hooks/usePagination";
 import { fetchSectionAnekdote, filterAndSearch, searchTerm } from "../../services/actions";
 import { setCurrentAnekdotes, setResetAnekdotes } from "../../services/dataReducer/dataReducer";
+import { useTypedDispatch, useTypedSelector } from "../../types/types";
 import { Pagination } from "../pagination/pagination";
 import { Spinner } from "../spinner/spinner";
 
 export const ResultSection = () => {
 
-    const anekdotes = useSelector(store => store.data.anekdotes);
-    const search = useSelector(store => store.data.search);
-    const filter = useSelector(store => store.data.filter);
-    const isLoading = useSelector(store => store.data.isLoading)
-    const dispatch = useDispatch()
-    const currentAnekdotes = useSelector(store => store.data.currentAnekdotes)
-    const theme = useSelector(store => store.data.theme)
+    const anekdotes = useTypedSelector(store => store.data.anekdotes);
+    const search = useTypedSelector(store => store.data.search);
+    const filter = useTypedSelector(store => store.data.filter);
+    const isLoading = useTypedSelector(store => store.data.isLoading)
+    const dispatch = useTypedDispatch()
+    const currentAnekdotes = useTypedSelector(store => store.data.currentAnekdotes)
+    const theme = useTypedSelector(store => store.data.theme)
 
     const { maxPage, currentPage, findCurrentAnekdotes } = usePagination(anekdotes, 5);
 
@@ -25,7 +25,7 @@ export const ResultSection = () => {
     useEffect(() => {
         dispatch(setResetAnekdotes())
         if (filter.length && !search) {
-            filter.map(category => {
+            filter.forEach(category => {
                 dispatch(fetchSectionAnekdote(category))
             })
         } else if (filter.length && search) {
