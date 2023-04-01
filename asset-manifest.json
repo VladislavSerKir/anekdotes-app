@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/anekdotes-app/static/css/main.6b6ccca4.css",
-    "main.js": "/anekdotes-app/static/js/main.72c58d80.js",
+    "main.css": "/anekdotes-app/static/css/main.8efac0a5.css",
+    "main.js": "/anekdotes-app/static/js/main.c198cf9c.js",
     "static/media/picture.png": "/anekdotes-app/static/media/picture.e3953dc2d0da10ce653f.png",
+    "static/media/picture-dark.png": "/anekdotes-app/static/media/picture-dark.d94fd72bd2d71d98c73f.png",
     "static/media/work.jpeg": "/anekdotes-app/static/media/work.e3098a04b25aca04fc17.jpeg",
     "static/media/students.jpeg": "/anekdotes-app/static/media/students.d5132050e694ff4308b4.jpeg",
     "static/media/man.jpeg": "/anekdotes-app/static/media/man.6cc4eefba0cebd3c3cbd.jpeg",
@@ -20,11 +21,11 @@
     "static/media/russians.jpeg": "/anekdotes-app/static/media/russians.f3b6fa24fb9bd8c88ff5.jpeg",
     "static/media/poles.jpeg": "/anekdotes-app/static/media/poles.fbc6e6eb17044b32a2e0.jpeg",
     "index.html": "/anekdotes-app/index.html",
-    "main.6b6ccca4.css.map": "/anekdotes-app/static/css/main.6b6ccca4.css.map",
-    "main.72c58d80.js.map": "/anekdotes-app/static/js/main.72c58d80.js.map"
+    "main.8efac0a5.css.map": "/anekdotes-app/static/css/main.8efac0a5.css.map",
+    "main.c198cf9c.js.map": "/anekdotes-app/static/js/main.c198cf9c.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b6ccca4.css",
-    "static/js/main.72c58d80.js"
+    "static/css/main.8efac0a5.css",
+    "static/js/main.c198cf9c.js"
   ]
 }
