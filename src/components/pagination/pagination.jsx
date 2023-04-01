@@ -15,6 +15,10 @@ export const Pagination = () => {
         dispatch(setCurrentAnekdotes(findCurrentAnekdotes()))
     }, [currentPage, maxPage])
 
+    const onChangePageHandler = (e) => {
+        setPage(e.target.value)
+    }
+
     return (
         <div className={`pagination`}>
             <div className={`ui buttons`}>
@@ -30,7 +34,7 @@ export const Pagination = () => {
                         type="number"
                         value={page}
                         placeholder="Перейти на страницу..."
-                        onChange={(e) => dispatch(setPage(e.target.value))}
+                        onChange={(e) => onChangePageHandler(e)}
                     />
                     <button
                         className="ui icon button purple"

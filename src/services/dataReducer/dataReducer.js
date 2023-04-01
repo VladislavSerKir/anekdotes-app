@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const dataState = {
+    theme: 'light',
     term: '',
     search: '',
     filter: [],
@@ -13,6 +14,9 @@ export const dataSlice = createSlice({
     name: 'data',
     initialState: dataState,
     reducers: {
+        setTheme: (state, action) => {
+            state.theme = action.payload
+        },
         setIsLoading: (state, action) => {
             state.isLoading = action.payload
         },
@@ -58,5 +62,5 @@ export const dataSlice = createSlice({
     },
 })
 
-export const { setIsLoading, setTerm, setSearch, setResetSearch, setFilter, setResetFilter, setResetCategory, setAnekdotes, setResetAnekdotes, filterAnekdotesToSearch, setAnekdote, setCurrentAnekdotes } = dataSlice.actions
+export const { setTheme, setIsLoading, setTerm, setSearch, setResetSearch, setFilter, setResetFilter, setResetCategory, setAnekdotes, setResetAnekdotes, filterAnekdotesToSearch, setAnekdote, setCurrentAnekdotes } = dataSlice.actions
 export const dataReducer = dataSlice.reducer

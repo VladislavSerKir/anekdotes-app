@@ -6,7 +6,7 @@ export const anekdotes = axios.create({
     baseURL: 'http://localhost:3001'
 });
 
-export const search = (search) => async (dispatch) => {
+export const searchTerm = (search) => async (dispatch) => {
     const response = await anekdotes.get("/anekdotes");
 
     const shuffledAnekdotes = shuffle(response.data)

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { usePagination } from "../../hooks/usePagination";
-import { fetchSectionAnekdote, filterAndSearch } from "../../services/actions";
+import { fetchSectionAnekdote, filterAndSearch, searchTerm } from "../../services/actions";
 import { setCurrentAnekdotes, setResetAnekdotes } from "../../services/dataReducer/dataReducer";
 import { Pagination } from "../pagination/pagination";
 import { Spinner } from "../spinner/spinner";
@@ -14,6 +14,7 @@ export const ResultSection = () => {
     const isLoading = useSelector(store => store.data.isLoading)
     const dispatch = useDispatch()
     const currentAnekdotes = useSelector(store => store.data.currentAnekdotes)
+    const theme = useSelector(store => store.data.theme)
 
     const { maxPage, currentPage, findCurrentAnekdotes } = usePagination(anekdotes, 5);
 
@@ -30,7 +31,7 @@ export const ResultSection = () => {
         } else if (filter.length && search) {
             dispatch(filterAndSearch(filter, search))
         } else if (!filter.length && search) {
-            dispatch(search(search))
+            dispatch(searchTerm(search))
         }
 
     }, [search, filter])
@@ -63,10 +64,10 @@ export const ResultSection = () => {
                                 </a>
                                 <div className="content">
                                     <a href="/" className={`header`}>
-                                        <p className={`result-section__item-title`}>
+                                        <p className={`result-section__item-title ${theme === 'dark' ? 'result-section__item-title_thyme_dark' : ''}`}>
                                             {`${index + 1} - ${anekdote.title}`}
                                         </p></a>
-                                    <div className="description">
+                                    <div className={`description ${theme === 'dark' ? 'description_thyme_dark' : ''}`}>
                                         <p>{anekdote.content}</p>
                                     </div>
                                 </div>

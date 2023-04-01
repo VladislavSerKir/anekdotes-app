@@ -7,6 +7,15 @@
     display: flex;
     flex-direction: column;
 
+    &__theme-switcher {
+        margin: 0 auto;
+        padding: 15px 0
+    }
+
+    &__label-thyme_dark {
+        color: white;
+    }
+
     &__logo {
         padding-top: 30px;
         max-width: 300px;
@@ -50,4 +59,8 @@
             padding: 0 50px;
         }
     }
+}
+
+.ui.toggle.checkbox input:checked~label {
+    color: white !important;
 }

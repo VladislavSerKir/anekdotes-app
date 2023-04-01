@@ -1,4 +1,14 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 .body {
     margin: 0 auto;
     background: linear-gradient(108deg, rgba(255, 247, 211, 0.73357265269389) 16%, rgba(250, 255, 174, 1) 100%);
+    transition: all 1s;
+
+    &-theme_dark {
+        background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(130, 7, 7, 1) 56%, rgba(136, 96, 40, 1) 100%);
+    }
 }
