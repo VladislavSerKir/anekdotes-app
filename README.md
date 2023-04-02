@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+<div>
+<h1>Приложение: 'Анекдоты'</h1>
+<a href="https://vladislavserkir.github.io/anekdotes-app/">
+</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![2023-04-02_21-10-37](https://user-images.githubusercontent.com/83783362/229370957-890fd57c-a1ab-41a1-b51c-fbf3df8e23a9.png)
 
-## Available Scripts
+Вашему вниманию представляется приложение с развлекательными анекдотами. Интересующие вас анекдоты можно сразу найти по взаимосвязанному фильтру и поиску.
 
-In the project directory, you can run:
+## Технологии в проекте
+Для написания проекта использовалась библиотека **React**, в основе проекта лежит сборка **Create React App** с флагом -template ts для возможности компиляции файлов компонентов с разметкой и простых файлов с **JS в TypeScript**. 
+* Для написания структуры стилей использовалась БЭМ методология, стили написаны на **SCSS**, который предлагает более удобный и интуитивно понятный синтаксис для понимания и реализации адаптивности на разных расширениях. **Решено не использовать modules** для уменьшения импортов в компоненты и невозможностью написания полноценных селекторов по БЭМ.
+* Поиск анекдотов по фильтрам и поиску строится на основе запуска функции **useEffect** каждый раз когда один из параметров поиска меняется. Для сокращения количества запросов к серверу при изменении исходных данных внутри хука реализован паттерн **Props Bounce**. Он позволяет записывать в состояние данные с задержкой, что сокращает количество запросов к серверу.
+* В качестве **API JSON сервера** для хранения базы данных на данном этапе выбран **RTMP server**. Для полноценной работы приложения небходимо скачать содежимое папки server и непосредственно запустить на локальном компьютере с помощью команды **npm run start**.
+* Для запросов к серверу использовалась библиотека **axios** с удобным синтаксисом конфигурирования запросов.
+* Приложение имеет каскадную структуру компонентов с разметкой, где головной компонент App рендерится в корневой блок div .
+* Для удобного отображения блоков с анекдотами реализована **пагинация** через хук **usePagination**. 
+* Для управления состоянием приложения использовался **React Redux Toolkit** с использованием функции **createSlice** для автоматического создания экшенов и их последующей удобной типизации.
 
-### `npm start`
+## Реализация
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Приложение разделено на 2 части:
+* Блок с исходными данными в виде формы. 
+* Блок с результатами и пагинацией.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Запись экрана 2023-04-02 в 21 42 20](https://user-images.githubusercontent.com/83783362/229372711-7d215805-244f-4ae2-a61c-89723cb9eef6.gif)
 
-### `npm test`
+## Технологии
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="left">
+  <br/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg"  title="SASS" alt="SASS" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-plain.svg" title="TypeScript" alt="TypeScript" width="40" height="40"/>&nbsp;
+    <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
+    <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="40" height="40"/>&nbsp;
+</div>
 
-### `npm run build`
+## Установка, настройка
+Проект, развернутый на Github:  [GitHub Pages](https://vladislavserkir.github.io/anekdotes-app/)
+- Установка зависимостей: `npm install`
+- Режим разработки: `npm run dev`
+- Запуск сервера: `npm run start` в директории **server**
+- Сформировать проект для последующего размещения на ресурсах: `npm run build`
+- Сформировать заново проект для отображения на GitHub pages: `npm run deploy`
+## Написать мне
+[![github](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github)](https://github.com/VladislavSerKir)
+[![telegram](https://img.shields.io/badge/Telegram-68c4f0?style=for-the-badge&logo=telegram)](https://t.me/vl_kireev)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+</div>
+<hr>
