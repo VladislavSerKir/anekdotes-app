@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/anekdotes-app/static/css/main.8efac0a5.css",
-    "main.js": "/anekdotes-app/static/js/main.c198cf9c.js",
+    "main.js": "/anekdotes-app/static/js/main.bd04279c.js",
     "static/media/picture.png": "/anekdotes-app/static/media/picture.e3953dc2d0da10ce653f.png",
     "static/media/picture-dark.png": "/anekdotes-app/static/media/picture-dark.d94fd72bd2d71d98c73f.png",
     "static/media/work.jpeg": "/anekdotes-app/static/media/work.e3098a04b25aca04fc17.jpeg",
@@ -22,10 +22,10 @@
     "static/media/poles.jpeg": "/anekdotes-app/static/media/poles.fbc6e6eb17044b32a2e0.jpeg",
     "index.html": "/anekdotes-app/index.html",
     "main.8efac0a5.css.map": "/anekdotes-app/static/css/main.8efac0a5.css.map",
-    "main.c198cf9c.js.map": "/anekdotes-app/static/js/main.c198cf9c.js.map"
+    "main.bd04279c.js.map": "/anekdotes-app/static/js/main.bd04279c.js.map"
   },
   "entrypoints": [
     "static/css/main.8efac0a5.css",
-    "static/js/main.c198cf9c.js"
+    "static/js/main.bd04279c.js"
   ]
 }
